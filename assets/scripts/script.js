@@ -56,5 +56,12 @@ function fromLocalStorage() {
     })
 };
 
+$('#eraseBtn').click(function() {
+    if(window.confirm('Erase all tasks?')) {
+        localStorage.clear()
+        fromLocalStorage();
+    }
+})
+
 currentTime();
 fromLocalStorage();
