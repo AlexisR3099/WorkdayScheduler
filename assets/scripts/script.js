@@ -31,18 +31,18 @@ $('.description').click(function() {
     }
 });
 
-$('row').on('mouseleave', 'input', function() {
+$('.row').on('mouseleave', 'input', function() {
     let thisTask = $(':nth-child(2) input');
     let userTask = thisTask.val();
-    let pEelement = $('<p>').text(userTask);
-    thisTask.replaceWith(pEelement);
+    let pElement = $('<p>').text(userTask);
+    thisTask.replaceWith(pElement);
 });
 
 $('.saveBtn').click(function() {
     let parentHour = $(this).parent().data('hour');
     let thisArray = "_" + parentHour;
     let arrayContent = $(this).siblings('div').find('p').text().trim();
-    let newArray = eval(thisArray + "=[\"" + arrayContent + "\"");
+    let newArray = eval(thisArray + "=[\"" + arrayContent + "\"];");
     localStorage.setItem("\"" + thisArray + "\"", JSON.stringify(newArray));
 });
 
